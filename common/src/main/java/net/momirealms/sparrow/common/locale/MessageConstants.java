@@ -182,4 +182,64 @@ public interface MessageConstants {
     TranslatableComponent.Builder COMMANDS_ADMIN_LOOK_SUCCESS_SINGLE = Component.translatable().key("commands.admin.look.success.single");
     TranslatableComponent.Builder COMMANDS_ADMIN_LOOK_SUCCESS_MULTIPLE = Component.translatable().key("commands.admin.look.success.multiple");
     TranslatableComponent.Builder COMMANDS_PLAYER_LOOK_SUCCESS = Component.translatable().key("commands.player.look.success");
+    
+    // Teleport commands
+    TranslatableComponent.Builder COMMANDS_TELEPORT_SPAWN_NOT_SET = Component.translatable().key("commands.teleport.spawn.not_set");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_SPAWN_SUCCESS = Component.translatable().key("commands.teleport.spawn.success");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_SPAWN_SUCCESS_ADMIN = Component.translatable().key("commands.teleport.spawn.success_admin");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_SPAWN_FAILED = Component.translatable().key("commands.teleport.spawn.failed");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_SETSPAWN_SUCCESS = Component.translatable().key("commands.teleport.setspawn.success");
+    
+    TranslatableComponent.Builder COMMANDS_TELEPORT_HOME_NOT_FOUND = Component.translatable().key("commands.teleport.home.not_found");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_HOME_SUCCESS = Component.translatable().key("commands.teleport.home.success");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_HOME_FAILED = Component.translatable().key("commands.teleport.home.failed");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_HOME_LIMIT = Component.translatable().key("commands.teleport.home.limit");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_SETHOME_SUCCESS = Component.translatable().key("commands.teleport.sethome.success");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_DELHOME_SUCCESS = Component.translatable().key("commands.teleport.delhome.success");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_HOMES_EMPTY = Component.translatable().key("commands.teleport.homes.empty");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_HOMES_LIST = Component.translatable().key("commands.teleport.homes.list");
+    
+    TranslatableComponent.Builder COMMANDS_TELEPORT_WARP_NOT_FOUND = Component.translatable().key("commands.teleport.warp.not_found");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_WARP_SUCCESS = Component.translatable().key("commands.teleport.warp.success");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_WARP_FAILED = Component.translatable().key("commands.teleport.warp.failed");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_SETWARP_SUCCESS = Component.translatable().key("commands.teleport.setwarp.success");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_DELWARP_SUCCESS = Component.translatable().key("commands.teleport.delwarp.success");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_WARPS_EMPTY = Component.translatable().key("commands.teleport.warps.empty");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_WARPS_LIST = Component.translatable().key("commands.teleport.warps.list");
+    
+    // TP/TPA commands
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TP_SELF = Component.translatable().key("commands.teleport.tp.self");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TP_SUCCESS_SINGLE = Component.translatable().key("commands.teleport.tp.success.single");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TP_SUCCESS_MULTIPLE = Component.translatable().key("commands.teleport.tp.success.multiple");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TPA_SENT = Component.translatable().key("commands.teleport.tpa.sent");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TPA_SELF = Component.translatable().key("commands.teleport.tpa.self");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TPA_RECEIVED = Component.translatable().key("commands.teleport.tpa.received");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TPA_RECEIVED_BUTTONS = Component.translatable().key("commands.teleport.tpa.received.buttons");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TPHERE_SENT = Component.translatable().key("commands.teleport.tphere.sent");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TPHERE_RECEIVED = Component.translatable().key("commands.teleport.tphere.received");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TPACCEPT_NO_REQUEST = Component.translatable().key("commands.teleport.tpaccept.no_request");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TPACCEPT_OFFLINE = Component.translatable().key("commands.teleport.tpaccept.offline");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TPACCEPT_SUCCESS_TPA = Component.translatable().key("commands.teleport.tpaccept.success.tpa");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TPACCEPT_SUCCESS_TPHERE = Component.translatable().key("commands.teleport.tpaccept.success.tphere");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TPACCEPT_NOTIFY = Component.translatable().key("commands.teleport.tpaccept.notify");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TPDENY_SUCCESS = Component.translatable().key("commands.teleport.tpdeny.success");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TPDENY_NOTIFY = Component.translatable().key("commands.teleport.tpdeny.notify");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TIME_SET = Component.translatable().key("commands.teleport.time.set");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TIME_ADD = Component.translatable().key("commands.teleport.time.add");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TIME_QUERY = Component.translatable().key("commands.teleport.time.query");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TIME_INVALID = Component.translatable().key("commands.teleport.time.invalid");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TIME_USAGE = Component.translatable().key("commands.teleport.time.usage");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TIME_NO_WORLD = Component.translatable().key("commands.teleport.time.no_world");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_TIME_HELP = Component.translatable().key("commands.teleport.time.help");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_BACK_SUCCESS = Component.translatable().key("commands.teleport.back.success");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_BACK_FAILED = Component.translatable().key("commands.teleport.back.failed");
+    TranslatableComponent.Builder COMMANDS_TELEPORT_BACK_DELETED = Component.translatable().key("commands.teleport.back.deleted");
+    
+    // GameMode commands
+    TranslatableComponent.Builder COMMANDS_PLAYER_GAMEMODE_SUCCESS = Component.translatable().key("commands.player.gamemode.success");
+    TranslatableComponent.Builder COMMANDS_PLAYER_GAMEMODE_FAILED_SAME = Component.translatable().key("commands.player.gamemode.failed.same");
+    TranslatableComponent.Builder COMMANDS_ADMIN_GAMEMODE_SUCCESS_SINGLE = Component.translatable().key("commands.admin.gamemode.success.single");
+    TranslatableComponent.Builder COMMANDS_ADMIN_GAMEMODE_SUCCESS_MULTIPLE = Component.translatable().key("commands.admin.gamemode.success.multiple");
+    TranslatableComponent.Builder COMMANDS_ADMIN_GAMEMODE_FAILED_SAME = Component.translatable().key("commands.admin.gamemode.failed.same");
+    TranslatableComponent.Builder COMMANDS_ADMIN_GAMEMODE_FAILED_NO_CHANGE = Component.translatable().key("commands.admin.gamemode.failed.no_change");
 }

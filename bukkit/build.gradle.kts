@@ -33,6 +33,9 @@ dependencies {
     compileOnly("com.mojang:brigadier:${rootProject.properties["mojang_brigadier_version"]}")
     compileOnly("org.bstats:bstats-bukkit:${rootProject.properties["bstats_version"]}")
     compileOnly("me.clip:placeholderapi:${rootProject.properties["placeholder_api_version"]}")
+    
+    // LightingLuminol API support
+    compileOnly(files("../lightingluminol-api/build/libs/lightingluminol-api-1.21.4-R0.1-SNAPSHOT.jar"))
 }
 
 artifacts {
@@ -40,15 +43,15 @@ artifacts {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
-    options.release.set(17)
+    options.release.set(21)
     dependsOn(tasks.clean)
 }

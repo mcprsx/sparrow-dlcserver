@@ -122,6 +122,7 @@ public class EnchantAdminCommand extends BukkitCommandFeature<CommandSender> {
         return false;
     }
 
+    @SuppressWarnings("deprecation")
     private Component getFullName(Enchantment enchantment, int level) {
         Component component = Component.translatable(enchantment.translationKey());
         if (enchantment.isCursed()) {

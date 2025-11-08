@@ -486,3 +486,131 @@ look_player:
   permission: sparrow.command.player.look
   usage:
     - /look
+
+# Teleport commands
+spawn_player:
+  enable: true
+  permission: sparrow.command.player.spawn
+  usage:
+    - /spawn
+
+spawn_admin:
+  enable: true
+  permission: sparrow.command.admin.spawn
+  usage:
+    - /sparrow spawn
+    - /spa spawn
+
+setspawn_admin:
+  enable: true
+  permission: sparrow.command.admin.setspawn
+  usage:
+    - /sparrow setspawn
+    - /spa setspawn
+    - /setspawn
+
+home_player:
+  enable: true
+  permission: sparrow.command.player.home
+  usage:
+    - /home
+
+sethome_player:
+  enable: true
+  permission: sparrow.command.player.sethome
+  usage:
+    - /sethome
+
+delhome_player:
+  enable: true
+  permission: sparrow.command.player.delhome
+  usage:
+    - /delhome
+
+warp_player:
+  enable: true
+  permission: sparrow.command.player.warp
+  usage:
+    - /warp
+
+setwarp_admin:
+  enable: true
+  permission: sparrow.command.admin.setwarp
+  usage:
+    - /sparrow setwarp
+    - /spa setwarp
+    - /setwarp
+
+delwarp_admin:
+  enable: true
+  permission: sparrow.command.admin.delwarp
+  usage:
+    - /sparrow delwarp
+    - /spa delwarp
+    - /delwarp
+
+warps_player:
+  enable: true
+  permission: sparrow.command.player.warps
+  usage:
+    - /warps
+
+time_admin:
+  enable: true
+  permission: sparrow.command.admin.time
+  usage:
+    - /time
+    - /sparrow time
+    - /spa time
+
+tp_admin:
+  enable: true
+  permission: sparrow.command.admin.tp
+  usage:
+    - /tp
+
+tpa_player:
+  enable: true
+  permission: sparrow.command.player.tpa
+  usage:
+    - /tpa
+
+tphere_admin:
+  enable: true
+  permission: sparrow.command.admin.tphere
+  usage:
+    - /tphere
+
+tpaccept_player:
+  enable: true
+  permission: sparrow.command.player.tpaccept
+  usage:
+    - /tpaccept
+    - /tpyes
+
+tpdeny_player:
+  enable: true
+  permission: sparrow.command.player.tpdeny
+  usage:
+    - /tpdeny
+    - /tpno
+
+back_player:
+  enable: true
+  permission: sparrow.command.player.back
+  usage:
+    - /back
+
+gamemode_player:
+  enable: true
+  permission: sparrow.command.player.gamemode
+  usage:
+    - /gamemode
+    - /gm
+
+gamemode_admin:
+  enable: true
+  permission: sparrow.command.admin.gamemode
+  usage:
+    - /sparrow gamemode
+    - /spa gamemode

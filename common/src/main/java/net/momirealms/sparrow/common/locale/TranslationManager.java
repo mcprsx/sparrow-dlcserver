@@ -20,7 +20,8 @@ import java.util.stream.Stream;
 public class TranslationManager {
 
     public static final Locale DEFAULT_LOCALE = Locale.ENGLISH;
-    private static final List<String> locales = List.of("en", "zh_cn");
+    private static final List<String> locales = List.of("en", "zh_tw");
+    private static Locale configuredLocale = Locale.TRADITIONAL_CHINESE; // 默认繁体中文
 
     private final SparrowPlugin plugin;
     private final Set<Locale> installed = ConcurrentHashMap.newKeySet();
@@ -43,10 +44,32 @@ public class TranslationManager {
             this.plugin.getConfigManager().loadConfig("translations/" + lang + ".yml");
         }
 
+        // Get default locale from config
+        Locale defaultLocale = getConfiguredDefaultLocale();
+        configuredLocale = defaultLocale; // 保存配置的语言
+        
         this.registry = MiniMessageTranslationRegistry.create(Key.key("sparrow", "main"), AdventureHelper.getMiniMessage());
-        this.registry.defaultLocale(DEFAULT_LOCALE);
+        this.registry.defaultLocale(defaultLocale);
         this.loadFromFileSystem(this.translationsDirectory, false);
         MiniMessageTranslator.translator().addSource(this.registry);
+        
+        plugin.getBootstrap().getPluginLogger().info("Language set to: " + defaultLocale);
+    }
+    
+    private Locale getConfiguredDefaultLocale() {
+        try {
+            var config = plugin.getConfigManager().loadConfig("config.yml");
+            String localeStr = config.getString("default-locale", "zh_tw"); // 默认繁体中文
+            if (localeStr != null && !localeStr.equalsIgnoreCase("auto")) {
+                Locale locale = parseLocale(localeStr);
+                if (locale != null) {
+                    return locale;
+                }
+            }
+        } catch (Exception e) {
+            plugin.getBootstrap().getPluginLogger().warn("Failed to load default locale from config, using Traditional Chinese", e);
+        }
+        return Locale.TRADITIONAL_CHINESE; // 默认繁体中文
     }
 
     public static Component render(Component component) {
@@ -55,10 +78,8 @@ public class TranslationManager {
 
     public static Component render(Component component, @Nullable Locale locale) {
         if (locale == null) {
-            locale = Locale.getDefault();
-            if (locale == null) {
-                locale = DEFAULT_LOCALE;
-            }
+            // 使用配置的语言，而不是系统语言
+            locale = configuredLocale;
         }
         return MiniMessageTranslator.render(component, locale);
     }

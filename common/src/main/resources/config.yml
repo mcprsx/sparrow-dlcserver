@@ -1,7 +1,90 @@
 #
 # Don't change this
 #
-config-version: "${config_version}"
+config-version: '2'
+
+# Language settings
+# Available languages: en (English), zh_tw (繁體中文)
+# Set to "auto" to use player's client language automatically
+# Set to specific language code to force all players to use that language
+default-locale: zh_tw
+
+# Home (家) system GUI settings
+home-system:
+  gui:
+    # GUI title (supports & color codes like &a, &b, &c, etc.)
+    # Placeholders: <page>, <total_pages>
+    title: '<shift:-8>&f<image:dlcserver:home>'
+    
+    # GUI size (must be multiple of 9, max 54)
+    size: 36
+    
+    # Home item
+    home-item:
+      material: RED_BED
+      # Custom model data (set to 0 or remove to disable)
+      custom-model-data: 0
+      display-name: '&6<name>'
+      lore:
+      - '&7世界：&e<world>'
+      - '&bX: <x>'
+      - '&bY: <y>'
+      - '&bZ: <z>'
+      - ''
+      - '&e點擊傳送'
+    
+    # Pagination buttons
+    previous-page:
+      material: ARROW
+      custom-model-data: 0
+      display-name: '&e⬅ 上一頁'
+    
+    next-page:
+      material: ARROW
+      custom-model-data: 0
+      display-name: '&e下一頁 ➡'
+    
+    current-page:
+      material: PAPER
+      custom-model-data: 0
+      display-name: '&b第 <page> 頁 / 共 <total> 頁'
+
+# Back (傳送歷史) system settings
+back-system:
+  # Default maximum number of teleport history locations per player
+  # Can be overridden by permissions: sparrow.back.8, sparrow.back.16, sparrow.back.24, etc.
+  # Permission sparrow.back.unlimited allows unlimited history
+  default-max-history: 8
+  
+  # Minimum teleport distance to record (in blocks)
+  # Teleports shorter than this distance won't be recorded
+  min-distance: 10.0
+  
+  # Auto-remove expired history (in milliseconds)
+  # 1800000 = 30 minutes, 3600000 = 1 hour, 7200000 = 2 hours, 0 = never expire
+  expire-time: 3600000 # 1小时后自动移除
+  
+  # GUI settings
+  gui:
+    # GUI title (supports & color codes like &a, &b, &c, etc.)
+    title: '<shift:-8>&f<image:dlcserver:back>'
+    
+    # GUI size (must be multiple of 9, max 54)
+    size: 36
+ 
+    # History point item
+    history-item:
+      material: ENDER_PEARL
+      custom-model-data: 0
+      display-name: '&6傳送點 #<number>'
+      lore:
+      - '&7世界：&e<world>'
+      - '&bX: <x>'
+      - '&bY: <y>'
+      - '&bZ: <z>'
+      - ''
+      - '&e左鍵點擊傳送'
+      - '&c右鍵點擊刪除'
 
 # How the plugin should store data
 #
@@ -32,31 +115,31 @@ database-settings:
   #   (MySQL: 3306, PostgreSQL: 5432, MongoDB: 27017)
   # - Specify as "host:port" if differs
   address: localhost
-
+  
   # The name of the database to store LuckPerms data in.
   # - This must be created already. Don't worry about this setting if you're using MongoDB.
   database: minecraft
-
+  
   # Credentials for the database.
   username: root
   password: ''
-
+  
   # Connection parameters for all SQL storage methods
-  connection-parameters: '?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8'
-
+  connection-parameters: ?autoReconnect=true&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+  
   # The prefix for all Sparrow SQL tables.
   #
   # - This only applies for remote SQL storage types (MySQL, MariaDB, etc).
   # - Change this if you want to use different tables for different servers.
-  table-prefix: 'sparrow_'
-
+  table-prefix: sparrow_
+  
   # The prefix to use for all LuckPerms MongoDB collections.
   #
   # - This only applies for the MongoDB storage type.
   # - Change this if you want to use different collections for different servers. The default is no
   # prefix.
   mongodb-collection-prefix: ''
-
+  
   # The connection string URI to use to connect to the MongoDB instance.
   #
   # - When configured, this setting will override anything defined in the address, database,
@@ -65,7 +148,7 @@ database-settings:
   #   below.
   # - For more information, please see https://docs.mongodb.com/manual/reference/connection-string/
   mongodb-connection-uri: ''
-
+  
   # Connection pool settings
   pool-settings:
     # Sets the maximum size of the MySQL connection pool.
@@ -74,24 +157,24 @@ database-settings:
     # - More information about determining the size of connection pools can be found here:
     #   https://github.com/brettwooldridge/HikariCP/wiki/About-Pool-Sizing
     maximum-pool-size: 10
-
+    
     # Sets the minimum number of idle connections that the pool will try to maintain.
     # - For maximum performance and responsiveness to spike demands, it is recommended to not set
     #   this value and instead allow the pool to act as a fixed size connection pool.
     #   (set this value to the same as 'maximum-pool-size')
     minimum-idle: 10
-
+    
     # This setting controls the maximum lifetime of a connection in the pool in milliseconds.
     # - The value should be at least 30 seconds less than any database or infrastructure imposed
     #   connection time limit.
     maximum-lifetime: 1800000 # 30 minutes
-
+    
     # This setting controls how frequently the pool will 'ping' a connection in order to prevent it
     # from being timed out by the database or network infrastructure, measured in milliseconds.
     # - The value should be less than maximum-lifetime and greater than 30000 (30 seconds).
     # - Setting the value to zero will disable the keepalive functionality.
     keepalive-time: 0
-
+    
     # This setting controls the maximum number of milliseconds that the plugin will wait for a
     # connection from the pool, before timing out.
     connection-timeout: 5000 # 5 seconds

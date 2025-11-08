@@ -95,7 +95,7 @@ public final class EntityUtils {
     public static void heal(@NotNull Entity entity) {
         requireNonNull(entity, "entity");
         if (entity instanceof LivingEntity livingEntity) {
-            livingEntity.setHealth(requireNonNull(livingEntity.getAttribute(Attribute.GENERIC_MAX_HEALTH)).getValue());
+            livingEntity.setHealth(requireNonNull(livingEntity.getAttribute(Attribute.MAX_HEALTH)).getValue());
             if (livingEntity instanceof Player player) {
                 player.setFoodLevel(20);
                 player.setSaturation(10f);

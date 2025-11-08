@@ -5,6 +5,8 @@ import net.kyori.adventure.util.Index;
 import net.momirealms.sparrow.bukkit.SparrowBukkitPlugin;
 import net.momirealms.sparrow.bukkit.command.feature.player.LookAdminCommand;
 import net.momirealms.sparrow.bukkit.command.feature.player.LookPlayerCommand;
+import net.momirealms.sparrow.bukkit.command.feature.player.GameModeAdminCommand;
+import net.momirealms.sparrow.bukkit.command.feature.player.GameModePlayerCommand;
 import net.momirealms.sparrow.bukkit.command.feature.container.*;
 import net.momirealms.sparrow.bukkit.command.feature.entity.BurnAdminCommand;
 import net.momirealms.sparrow.bukkit.command.feature.entity.ExtinguishAdminCommand;
@@ -21,6 +23,7 @@ import net.momirealms.sparrow.bukkit.command.feature.message.TitleAdminCommand;
 import net.momirealms.sparrow.bukkit.command.feature.message.ToastAdminCommand;
 import net.momirealms.sparrow.bukkit.command.feature.misc.*;
 import net.momirealms.sparrow.bukkit.command.feature.player.*;
+import net.momirealms.sparrow.bukkit.command.feature.teleport.*;
 import net.momirealms.sparrow.bukkit.command.feature.world.*;
 import net.momirealms.sparrow.bukkit.command.processor.SelectorPostProcessor;
 import net.momirealms.sparrow.common.command.AbstractSparrowCommandManager;
@@ -113,7 +116,30 @@ public final class SparrowBukkitCommandManager extends AbstractSparrowCommandMan
             new ItemDisplayNamePlayerCommand(this),
             new ItemLorePlayerCommand(this),
             new LookAdminCommand(this),
-            new LookPlayerCommand(this)
+            new LookPlayerCommand(this),
+            new GameModePlayerCommand(this),
+            new GameModeAdminCommand(this),
+            // Teleport commands
+            new SpawnPlayerCommand(this),
+            new SpawnAdminCommand(this),
+            new SetSpawnAdminCommand(this),
+            new HomePlayerCommand(this),
+            new SetHomePlayerCommand(this),
+            new DelHomePlayerCommand(this),
+            new WarpPlayerCommand(this),
+            new SetWarpAdminCommand(this),
+            new DelWarpAdminCommand(this),
+            new WarpsPlayerCommand(this),
+            // Time commands
+            new TimeAdminCommand(this),
+            // Teleport request commands
+            new TpAdminCommand(this),
+            new TpaPlayerCommand(this),
+            new TpHereAdminCommand(this),
+            new TpAcceptPlayerCommand(this),
+            new TpDenyPlayerCommand(this),
+            // Back command
+            new BackPlayerCommand(this)
     );
 
     private final Index<String, CommandFeature<CommandSender>> INDEX = Index.create(CommandFeature::getFeatureID, FEATURES);

@@ -27,3 +27,6 @@ replay_pid*
 .gradle
 .vscode
 build
+
+# Exclude API folder
+lightingluminol-api/
